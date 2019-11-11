@@ -16,11 +16,20 @@ class ViewController: UIViewController {
     var cardNumber: Int = 1 {
         didSet {
             for number in numberChange {
-                number.text = "1"
-                
+                if cardNumber == 11 {
+                    number.text = "J"
+                } else if cardNumber == 12 {
+                    number.text = "Q"
+                } else if cardNumber == 13 {
+                    number.text = "K"
+                } else if cardNumber == 1 {
+                    number.text = "A"
+                } else {
+                    number.text = cardNumber.description
+                    }
+                }
             }
         }
-    }
     
     func stepperIncrease() {
         stepperControl.minimumValue = 1.0
@@ -64,7 +73,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+        cardNumber = 1
+        currentSegment = 1
     }
 
     
@@ -75,9 +85,8 @@ class ViewController: UIViewController {
     
     @IBAction func stepperChange(_ sender: UIStepper) {
         cardNumber = Int(sender.value)
-        cardNumber += 1
+
+        }
     }
     
-    
-}
 
