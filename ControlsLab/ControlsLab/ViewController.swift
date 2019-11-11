@@ -13,19 +13,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var displayImage: UIImageView!
     
-    var cardNumber: Double = 1.0 {
+    var cardNumber: Int = 1 {
         didSet {
             for number in numberChange {
-                number.text = "8"
+                number.text = "1"
+                
             }
         }
     }
     
-    func configureStepper() {
+    func stepperIncrease() {
         stepperControl.minimumValue = 1.0
         stepperControl.maximumValue = 10.0
         stepperControl.stepValue = 1.0
-        //default start value
         stepperControl.value = 1.0
     }
     
@@ -74,6 +74,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func stepperChange(_ sender: UIStepper) {
+        cardNumber = Int(sender.value)
+        cardNumber += 1
     }
     
     
