@@ -66,8 +66,7 @@ class ViewController: UIViewController {
         
         
     }
-    
-    
+
     
     @IBAction func suitGenerator(_ sender: UISegmentedControl) {
         currentSegment = sender.selectedSegmentIndex
